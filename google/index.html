@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>让我帮你谷歌一下 </title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>让我帮你</h1>
+    <img class="logo" src="logo.png" alt="谷歌" />
+    <h1>一下</h1>
+  </header>
+
+  <main>
+    <form action="https://www.google.com/search" method="GET">
+      <input type="text" name="q" maxlength="255" autocomplete="off" required>
+      <div class="action">
+        <input id="searchBtn" type="submit" value="Google 搜索" />
+        <input id="luckyBtn" type="submit" value="手气不错" />
+      </div>
+    </form>
+    <div class="ripple"></div>
+    <img id="arrow" class="moveInput" src="./arrow.png" alt="">
+    <section>
+      <div class="stop">快停下！我是自己人</div>
+      <div class="tips">输入一个问题，然后点击 Google 搜索</div>
+      <div id="output">
+        <textarea rows="3" readonly></textarea>
+        <div>
+          <button id="copy">复制</button>
+          <button id="preview">预览</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="disclaimer">
+      * 本站与谷歌公司没有任何联系
+    </div>
+    <a href="https://github.com/zxpzdtom/search-mate">GitHub</a>
+  </footer>
+</body>
+</html>
