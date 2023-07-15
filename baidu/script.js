@@ -29,7 +29,7 @@ window.onload = async function() {
     const searchValue = searchDom.value.trim();
     if (!wd && searchValue) {
       event.preventDefault();
-      textareaDom.value = `${location.origin}${location.pathname}?wd=${searchValue}`;
+      textareaDom.value = `${location.origin}${location.pathname}?wd=${encodeURIComponent(searchValue)}`;
       tipsDom.textContent = '↓↓↓ 复制下面的链接，教伸手党使用百度';
       outputDom.style.display = 'block';
     }
@@ -37,8 +37,12 @@ window.onload = async function() {
 
   copyButton.addEventListener('click', async function(event) {
     textareaDom.select();
-    document.execCommand('copy');
-    showMessage('复制成功')
+    try {
+      await navigator.clipboard.writeText(text);
+      showMessage('复制成功');
+    } catch (error) {
+      showMessage('复制失败，请手动复制');
+    }
   });
 
   previewButton.addEventListener('click', function() {
