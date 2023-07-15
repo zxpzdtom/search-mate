@@ -43,7 +43,7 @@ window.onload = async function() {
   copyButton.addEventListener('click', async function(event) {
     textareaDom.select();
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(textareaDom.value);
       showMessage('复制成功');
     } catch (error) {
       showMessage('复制失败，请手动复制');
@@ -107,7 +107,7 @@ window.onload = async function() {
       // 点击button
       searchBtn.click();
     }
-  }, 300);
+  }, 200);
 
   // 显示停止按钮
   const stopMessage = document.querySelector('.stop');
