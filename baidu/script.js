@@ -1,4 +1,4 @@
-function delay(ms) {
+async function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function showMessage(msg) {
@@ -82,6 +82,9 @@ window.onload = async function() {
     return;
   }
   let i = 0;
+  // 控制 2s 内输入完毕，每个字符输入的时间不超过 200ms
+  const delayTime = Math.min(Math.floor(2000 / wd.length), 200);
+
   // 模拟输入
   const timer = setInterval(async function() {
     searchDom.value += wd[i];
@@ -102,7 +105,7 @@ window.onload = async function() {
       // 点击button
       document.querySelector('input[type="submit"]').click();
     }
-  }, 200);
+  }, delayTime);
 
   // 显示停止按钮
   const stopMessage = document.querySelector('.stop');
