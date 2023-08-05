@@ -6,6 +6,18 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <meta property="og:title" content="让我帮你谷歌一下">
+  <meta property="og:description" content="让我帮你谷歌一下">
+  <meta property="og:image" content="favicon.ico">
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const wd = urlParams.get('wd');
+
+    if (wd) {
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      ogDescription.content = decodeURIComponent(wd);
+    }
+  </script>
 </head>
 <body>
   <header>
