@@ -9,15 +9,6 @@
   <meta property="og:title" content="让我帮你百度一下">
   <meta property="og:description" content="让我帮你百度一下">
   <meta property="og:image" content="favicon.ico">
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const wd = urlParams.get('wd');
-
-    if (wd) {
-      const ogDescription = document.querySelector('meta[property="og:description"]');
-      ogDescription.content = decodeURIComponent(wd);
-    }
-  </script>
 </head>
 <body>
   <header>
