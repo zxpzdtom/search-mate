@@ -1,12 +1,12 @@
 ### 让我帮你百度一下
 
-[https://search.dalin.cool/baidu](https://search.dalin.cool/baidu)
+[https://search.anyask.dev/baidu](https://search.anyask.dev/baidu)
 
 ![百度一下](assets/baidu.png)
 
 ### 让我帮你谷歌一下
 
-[https://search.dalin.cool/google](https://search.dalin.cool/google)
+[https://search.anyask.dev/google](https://search.anyask.dev/google)
 
 ![谷歌一下](assets/google.png)
 
